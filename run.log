@@ -1,0 +1,8 @@
+2026-04-22 19:57:37,750 - INFO - Starting training
+2026-04-22 19:57:37,751 - INFO - Config validate: seed=42,window=5,version=v1
+2026-04-22 19:57:37,772 - INFO - Columns detected: ['"timestamp', 'open', 'high', 'low', 'close', 'volume_btc', 'volume_usd"']
+2026-04-22 19:57:37,772 - INFO - Rows loaded: 10000
+2026-04-22 19:57:37,773 - INFO - Rolling mean computed
+2026-04-22 19:57:37,774 - INFO - Signal generated on 9996
+2026-04-22 19:57:37,774 - INFO - Metrics:{'version': 'v1', 'rows_processed': 10000, 'metric': 'signal_rate', 'value': 0.4991, 'latency_ms': 23, 'seed': 42, 'status': 'success'}
+2026-04-22 19:57:37,774 - INFO - Success
