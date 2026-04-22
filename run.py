@@ -21,7 +21,7 @@ def setup_logging(log_file):
 
 #write metrics
 def write_metrics(output_path,data):
-    with open(output_path,"W")as f:
+    with open(output_path,"w")as f:
         json.dump(data,f,indent=2)
 
 
@@ -29,7 +29,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input",required= True)
     parser.add_argument("--config",required=True)
-    parser.add_arguement("--output",required= True)
+    parser.add_argument("--output",required= True)
     parser.add_argument("--log-file",required = True)
     args = parser.parse_args()
 
@@ -57,7 +57,7 @@ def main():
         window = config["window"]
         version = config["version"]
 
-        if not isinstance(ssed,int):
+        if not isinstance(seed,int):
             raise ValueError("seed must be an integer")
         if not isinstance(window,int) or window<=0:
             raise ValueError("window must be a positive integer")
@@ -67,7 +67,7 @@ def main():
         logging.info(f"Config validate: seed={seed},window={window},version={version}")
         
         #load data
-        if not Path(args.imput).exists():
+        if not Path(args.input).exists():
             raise FileNotFoundError("Input CSV not found")
 
         try:
@@ -85,7 +85,7 @@ def main():
         
         df.columns = df.columns.str.strip().str.lower()
 
-        logging.info(f"Columns detected: {list(df.colums)}")
+        logging.info(f"Columns detected: {list(df.columns)}")
 
         if "close" not in df.columns:
             raise ValueError("Missing 'close' column")
